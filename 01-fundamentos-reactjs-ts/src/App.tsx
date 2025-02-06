@@ -2,13 +2,13 @@ import { Header } from "./components/Header"
 import "./global.css"
 import styles from "./App.module.css"
 import { Sidebar } from "./components/Sidebar"
-import { Post } from "./components/Post"
+import { IPost, Post } from "./components/Post"
 
 //  author: {avatarUrl: "", name: "", role: "" }
 //  publishedAt : Date
 //  content: Array string
 
-const posts = [
+const posts: IPost[] = [
   {
     id: 1,
     author: {
@@ -50,9 +50,7 @@ export function App() {
           {posts.map((post, index) => (
             <Post
               key={index}
-              author={post.author}
-              content={post.content}
-              publishedAt={post.publishedAt}
+              post={post}
             />
           ))}
         </main>
